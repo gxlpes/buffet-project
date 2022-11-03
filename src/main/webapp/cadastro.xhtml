@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="resources/css/cadastro.css"/>
+
+    <title>Buffet Atos</title>
+
+</head>
+<body>
+<section class="container">
+    <form method="POST" action="save">
+
+        <label for="id">CPF cliente </label>
+        <input type="text" name="id" id="id" required=""/>
+
+        <label for="client">Nome cliente </label>
+        <input type="text" name="client" id="client" required=""/>
+
+        <label for="guests">Número convidados </label>
+        <input type="number" name="guests" id="guests" required=""/>
+
+        <label for="desert">Sobremesa </label>
+        <input type="checkbox" name="desert" id="desert" value="s"/>
+
+        <button type="submit">Salvar</button>
+    </form>
+</section>
+
+</body>
+</html>

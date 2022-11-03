@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+    <link rel="stylesheet" href="resources/css/consulta.css"/>
+    <title>Resultado</title>
+</head>
+
+<h:body>
+    <h:dataTable id="tabelaClients" value="#{clientBean.getTableAll()}" var="client">
+            <h:column>
+                <p>Nome</p>
+                <h:outputText value="#{client.id}" />
+            </h:column>
+    </h:dataTable>
+</h:body>
+
+</html>
