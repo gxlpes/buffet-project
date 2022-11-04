@@ -53,7 +53,7 @@ public class ClientRepository {
         return "/clientData.xhtml?faces-redirect=true";
     }
 
-    public static List<Client> searchAll() {
+    public static List<Client> getAll() {
         setup();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -65,8 +65,22 @@ public class ClientRepository {
         return listClients;
     }
 
+    public static int totalClients() {
+        setup();
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        List<Client> listClients = session.createQuery("from Client", Client.class).getResultList();
+        session.getTransaction().commit();
+        session.close();
+
+        int qtd = listClients.size();
+
+        return qtd;
+    }
+
     public static Client getClient(String id) {
-setup();
+        setup();
         Transaction transaction = null;
 
         Session session = sessionFactory.openSession();

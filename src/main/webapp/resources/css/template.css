@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+ul a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=template.css.map */

@@ -1,11 +1,13 @@
 package bean;
 
+import lombok.AllArgsConstructor;
 import repository.ClientRepository;
 import entity.Client;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import java.util.List;
@@ -15,17 +17,21 @@ import java.util.List;
 @Data
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 
 public class ClientBean {
     static Client clientBean;
-    static List listBean;
+    int totalClients;
+    List<Client> listClients;
+
+    @PostConstruct
+    public void init() {
+        ClientRepository.setup();
+        listClients = ClientRepository.getAll();
+    }
 
     public static void getData(Client client) {
         clientBean = client;
-    }
-
-    public static void getAllData(List all) {
-        listBean = all;
     }
 
     public String getCPF() {
@@ -64,8 +70,8 @@ public class ClientBean {
         return clientBean.getPriceTotal();
     }
 
-    public List getTableAll() {
-        return ClientRepository.searchAll();
+    public int totalClients() {
+        return totalClients = listClients.size();
     }
 
 }
