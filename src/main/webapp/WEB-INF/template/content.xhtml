@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<HTML lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="template.css"/>
+    <title>Buffet Atos</title>
+</head>
+<body>
+<div id="header">
+    <ui:insert name="header">
+        <ui:include src="header.xhtml"/>
+    </ui:insert>
+</div>
+<div id="content">
+    <ui:insert name="content"></ui:insert>
+</div>
+<div id="footer">
+    <ui:insert name="footer">
+        <ui:include src="footer.xhtml"/>
+    </ui:insert>
+</div>
+</body>
+</HTML>
