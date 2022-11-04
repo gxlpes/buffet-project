@@ -4,6 +4,7 @@ import bean.ClientBean;
 import entity.Client;
 import repository.ClientRepository;
 
+import javax.persistence.NoResultException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -20,9 +21,17 @@ public class SaveServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         ClientRepository.setup();
-        Client clientTest = ClientRepository.getClient(id);
-        ClientBean.getData(clientTest);
-        response.sendRedirect("/resultado.xhtml");
+        Client clientTest = null;
+
+        try {
+            clientTest = ClientRepository.getClient(id);
+            ClientBean.getData(clientTest);
+        } catch (Exception e) {
+           throw new ServletException("deu pau", e);
+        } finally {
+            response.sendRedirect("/resultado.xhtml");
+        }
+
     }
 
     @Override

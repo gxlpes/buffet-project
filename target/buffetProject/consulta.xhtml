@@ -11,40 +11,45 @@
 <ui:composition template="/WEB-INF/template/content.xhtml">
     <ui:define name="content">
         <h:body>
-            <h:dataTable id="tabelaClients" value="#{clientBean.getTableAll()}" var="client">
-                <h:column>
-                    <p>CPF</p>
-                    <h:outputText value="#{client.id}"/>
-                </h:column>
-                <h:column>
-                    <p>Nome</p>
-                    <h:outputText value="#{client.client}"/>
-                </h:column>
-                <h:column>
-                    <p>Convidados</p>
-                    <h:outputText value="#{client.guests}"/>
-                </h:column>
-                <h:column>
-                    <p>Garçons</p>
-                    <h:outputText value="#{client.waiters}"/>
-                </h:column>
-                <h:column>
-                    <p>Preço convidado</p>
-                    <h:outputText value="#{client.priceGuest}"/>
-                </h:column>
-                <h:column>
-                    <p>Preço total convidados</p>
-                    <h:outputText value="#{client.priceGuests}"/>
-                </h:column>
-                <h:column>
-                    <p>Preço garçom</p>
-                    <h:outputText value="#{client.priceWaiters}"/>
-                </h:column>
-                <h:column>
-                    <p>Preço total</p>
-                    <h:outputText value="#{client.priceTotal}"/>
-                </h:column>
-            </h:dataTable>
+            <ui:fragment rendered="${clientBean.totalClients() == 0}">
+                <h3>Nenhum cliente cadastrado</h3>
+            </ui:fragment>
+            <ui:fragment rendered="${clientBean.totalClients() > 0}">
+                <h:dataTable id="tabelaClients" value="#{clientBean.listClients}" var="client">
+                    <h:column>
+                        <p>CPF</p>
+                        <h:outputText value="#{client.id}"/>
+                    </h:column>
+                    <h:column>
+                        <p>Nome</p>
+                        <h:outputText value="#{client.client}"/>
+                    </h:column>
+                    <h:column>
+                        <p>Convidados</p>
+                        <h:outputText value="#{client.guests}"/>
+                    </h:column>
+                    <h:column>
+                        <p>Garçons</p>
+                        <h:outputText value="#{client.waiters}"/>
+                    </h:column>
+                    <h:column>
+                        <p>Preço convidado</p>
+                        <h:outputText value="#{client.priceGuest}"/>
+                    </h:column>
+                    <h:column>
+                        <p>Preço total convidados</p>
+                        <h:outputText value="#{client.priceGuests}"/>
+                    </h:column>
+                    <h:column>
+                        <p>Preço garçom</p>
+                        <h:outputText value="#{client.priceWaiters}"/>
+                    </h:column>
+                    <h:column>
+                        <p>Preço total</p>
+                        <h:outputText value="#{client.priceTotal}"/>
+                    </h:column>
+                </h:dataTable>
+            </ui:fragment>
         </h:body>
     </ui:define>
 </ui:composition>
