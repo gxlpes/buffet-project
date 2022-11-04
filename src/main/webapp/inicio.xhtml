@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+<!DOCTYPE HTML>
+<HTML lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
     <link rel="stylesheet" href="resources/css/inicio.css"/>
     <title>Inicio</title>
 </head>
 
-<h:body>
-    <h1>Página inicial</h1>
-    <a href="consulta.xhtml">Consulta</a>
-    <a href="cadastro.xhtml">Cadastro</a>
-    <a href="buscar.xhtml">Buscar</a>
-</h:body>
+<ui:composition template="/WEB-INF/template/content.xhtml">
+    <ui:define name="content">
+        <h:body>
+            <h1>Página inicial</h1>
+            <a href="consulta.xhtml">Consulta</a>
+            <a href="cadastro.xhtml">Cadastro</a>
+            <a href="buscar.xhtml">Buscar</a>
+        </h:body>
+    </ui:define>
+</ui:composition>
 
-</html>
+
+</HTML>
