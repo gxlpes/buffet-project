@@ -10,18 +10,20 @@
     <link rel="stylesheet" href="resources/css/inicio.css"/>
     <title>Buffet Atos</title>
 </head>
+<h:body>
+    <section class="inicio">
 
+        <div class="logo">
+            <div class="circle"></div>
+            <img src="resources/images/logo_big.png" alt="logo big"/>
+        </div>
 
-<ui:composition template="/WEB-INF/template/content.xhtml">
-    <ui:define name="content">
-        <h:body>
-            <h1>Página inicial</h1>
-            <a href="consulta.xhtml">Consulta</a>
-            <a href="cadastro.xhtml">Cadastro</a>
-            <a href="buscar.xhtml">Buscar</a>
-        </h:body>
-    </ui:define>
-</ui:composition>
+        <div class="links">
+            <button onclick="location.href='opcoes.xhtml'" type="button">Project</button>
+            <button onclick="location.href='https://github.com/gxlpes/buffet-project'" type="button">GitHub</button>
+        </div>
 
+    </section>
 
+</h:body>
 </HTML>

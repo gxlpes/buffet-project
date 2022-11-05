@@ -1,7 +1,77 @@
-h1 {
-  background: purple;
+
+.inicio {
+  margin: auto;
+  height: 100vh;
+  max-width: 75%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 55px;
 }
 
-a {
-  color: green;
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    margin-top: -95px;
+  }
+
+  .circle {
+    position: absolute;
+    border: 10px dashed #2D2824;
+    opacity: 0.2;
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;
+    animation: rotate 10s infinite;
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
+  }
 }
+
+.links {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  align-content: center;
+  z-index: 999;
+
+  button {
+    width: 125px;
+    height: 35px;
+    background-color: #4B2B21;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #946D3F;
+      cursor: pointer;
+    }
+
+    a {
+      :hover {
+        background-color: #946D3F;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
