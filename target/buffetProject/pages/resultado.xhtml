@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+    <link rel="stylesheet" href="resources/resultado.css"/>
+    <title>Resultado</title>
+</head>
+
+<h:body>
+    <h1>Proposta Comercial Buffet Atos</h1>
+    <hr/>
+    <h3>Informações solicitante</h3>
+    <p>CPF: #{clientBean.getCPF()}</p>
+    <p>Nome: #{clientBean.getClient()}</p>
+    <hr/>
+    <h3>Dados da proposta</h3>
+    <p>Sobremesa: #{clientBean.getDesert()}</p>
+    <p>Número de convidados: #{clientBean.getGuests()}</p>
+    <p>Número de garçons: #{clientBean.getWaiters()}</p>
+    <hr/>
+    <h3>Valores da proposta</h3>
+    <p>Valor total por convidado: #{clientBean.getPriceGuest()}</p>
+    <p>Valor total convidados: #{clientBean.getPriceGuests()}</p>
+    <p>Valor total por garçom: #{clientBean.getPriceWaiters()}</p>
+    <p><b>Valor total da proposta: #{clientBean.getPriceTotal()}</b></p>
+
+    <a href="inicio.xhtml">Início</a>
+</h:body>
+
+</html>

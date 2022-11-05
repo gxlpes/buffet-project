@@ -5,7 +5,7 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <welcome-file-list>
-    <welcome-file>inicio.xhtml</welcome-file>
+    <welcome-file>pages/inicio.xhtml</welcome-file>
   </welcome-file-list>
 
   <error-page>
