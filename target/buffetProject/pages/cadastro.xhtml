@@ -7,7 +7,9 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="resources/cadastro.css"/>
+    <link rel="stylesheet" href="../resources/css/cadastro.css"/>
+    <link rel="stylesheet" href="../resources/css/global.css"/>
+
     <title>Buffet Atos</title>
 </head>
 
@@ -15,22 +17,28 @@
     <ui:define name="content">
         <body>
         <section class="container">
-            <form method="POST" action="save">
+            <div class="container-form">
 
-                <label for="id">CPF cliente </label>
-                <input type="text" name="id" id="id" required=""/>
+                <form method="POST" action="../value">
 
-                <label for="client">Nome cliente </label>
-                <input type="text" name="client" id="client" required=""/>
+                    <label for="id">CPF cliente </label>
+                    <input type="text" name="id" id="id" required=""/>
 
-                <label for="guests">Número convidados </label>
-                <input type="number" name="guests" id="guests" required=""/>
+                    <label for="client">Nome cliente </label>
+                    <input type="text" name="client" id="client" required=""/>
 
-                <label for="desert">Sobremesa </label>
-                <input type="checkbox" name="desert" id="desert" value="s"/>
+                    <label for="guests">Número convidados </label>
+                    <input type="number" name="guests" id="guests" required=""/>
 
-                <button type="submit">Salvar</button>
-            </form>
+                    <label for="desert" >Sobremesa
+                        <input type="checkbox" name="desert" id="desert" value="s"/>
+                    </label>
+
+                    <button type="submit">Salvar</button>
+                </form>
+
+            </div>
+
         </section>
         </body>
     </ui:define>

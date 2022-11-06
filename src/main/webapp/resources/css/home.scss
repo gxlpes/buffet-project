@@ -2,42 +2,10 @@
 .all-sec {
   margin-top: 150px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 90px;
-  animation: appear 0.4s ease-in-out;
-
-  @keyframes appear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  button {
-    width: 125px;
-    height: 35px;
-    background-color: #4B2B21;
-    border-radius: 3px;
-    color: white;
-    border: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      background-color: #946D3F;
-      cursor: pointer;
-    }
-
-    a {
-      :hover {
-        background-color: #946D3F;
-        cursor: pointer;
-      }
-    }
-  }
 
   img {
     width: 450px;

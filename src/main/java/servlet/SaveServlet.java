@@ -12,7 +12,7 @@ import java.io.IOException;
 
 import static calc.Price.*;
 
-@WebServlet(name = "SaveServlet", value = "/save")
+@WebServlet(name = "SaveServlet", value = "/value")
 public class SaveServlet extends HttpServlet {
 
     ClientRepository clientRepository = new ClientRepository();
@@ -29,7 +29,7 @@ public class SaveServlet extends HttpServlet {
         } catch (Exception e) {
            throw new ServletException("deu pau", e);
         } finally {
-            response.sendRedirect("/resultado.xhtml");
+            response.sendRedirect("../pages/resultado.xhtml");
         }
 
     }
@@ -64,6 +64,6 @@ public class SaveServlet extends HttpServlet {
 
         ClientBean.getData(clientData);
 
-        response.sendRedirect("/resultado.xhtml");
+        response.sendRedirect("../pages/resultado.xhtml");
     }
 }

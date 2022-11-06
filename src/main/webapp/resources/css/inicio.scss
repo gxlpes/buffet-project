@@ -1,15 +1,12 @@
-
 .inicio {
-  margin: auto;
   height: 100vh;
-  max-width: 75%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 55px;
   animation: appear 0.4s ease-in-out;
+
 
   @keyframes appear {
     from {
@@ -26,11 +23,8 @@
   align-items: center;
   justify-content: center;
 
-  img {
-    margin-top: -95px;
-  }
-
   .circle {
+    margin-top: 75px;
     position: absolute;
     border: 10px dashed #2D2824;
     opacity: 0.2;
@@ -60,28 +54,7 @@
   align-content: center;
   z-index: 999;
 
-  button {
-    width: 125px;
-    height: 35px;
-    background-color: #4B2B21;
-    border-radius: 3px;
-    color: white;
-    border: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    transition: all 0.3s ease-in-out;
 
-    &:hover {
-      background-color: #946D3F;
-      cursor: pointer;
-    }
-
-    a {
-      :hover {
-        background-color: #946D3F;
-        cursor: pointer;
-      }
-    }
-  }
 }
 
 
