@@ -1,0 +1,11 @@
+.buscar {
+  margin-inline: auto;
+  padding: 10px;
+}
+.buscar form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=buscar.css.map */

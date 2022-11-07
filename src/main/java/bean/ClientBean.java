@@ -43,7 +43,12 @@ public class ClientBean {
     }
 
     public String getDesert() {
-        return clientBean.getDesert();
+
+         if(clientBean.getDesert().equals("n")) {
+             return "Não";
+         } else {
+             return "Sim";
+         }
     }
 
     public Integer getGuests() {

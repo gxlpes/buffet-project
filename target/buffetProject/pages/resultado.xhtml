@@ -4,29 +4,53 @@
       xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
-    <link rel="stylesheet" href="resources/resultado.css"/>
+    <link rel="stylesheet" href="../resources/css/resultado.css"/>
+    <link rel="stylesheet" href="../resources/css/global.css"/>
     <title>Resultado</title>
 </head>
 
 <h:body>
-    <h1>Proposta Comercial Buffet Atos</h1>
-    <hr/>
-    <h3>Informações solicitante</h3>
-    <p>CPF: #{clientBean.getCPF()}</p>
-    <p>Nome: #{clientBean.getClient()}</p>
-    <hr/>
-    <h3>Dados da proposta</h3>
-    <p>Sobremesa: #{clientBean.getDesert()}</p>
-    <p>Número de convidados: #{clientBean.getGuests()}</p>
-    <p>Número de garçons: #{clientBean.getWaiters()}</p>
-    <hr/>
-    <h3>Valores da proposta</h3>
-    <p>Valor total por convidado: #{clientBean.getPriceGuest()}</p>
-    <p>Valor total convidados: #{clientBean.getPriceGuests()}</p>
-    <p>Valor total por garçom: #{clientBean.getPriceWaiters()}</p>
-    <p><b>Valor total da proposta: #{clientBean.getPriceTotal()}</b></p>
+    <div class="resultado">
 
-    <a href="inicio.xhtml">Início</a>
+        <div class="proposta-full">
+            <section class="company">
+                <div class="text-container">
+                    <h1>Proposta Comercial Buffet Atos</h1>
+                    <div class="company-data-specs">
+                        <p><b>CNPJ:</b> 12.345.678/0001-00 </p>
+                        <p><b>Inscrição estadual:</b> 1234-999-2</p>
+                        <p><b>Protocolo:</b> 123.455.123-9</p>
+                        <p><b>Endereço:</b> Rua Francisco Pereira Santos, n 756 - Centro</p>
+                        <p><b>Telefone:</b>3 425-0302</p>
+                    </div>
+                </div>
+                <img src="../resources/images/logo_big.png" alt="logo company"/>
+
+            </section>
+
+            <section class="proposta">
+                <h3>Informações solicitante</h3>
+                <p><b>CPF:</b> #{clientBean.getCPF()}</p>
+                <p><b>Nome:</b> #{clientBean.getClient()}</p>
+
+                <h3>Dados da proposta</h3>
+                <p><b>Sobremesa:</b> #{clientBean.getDesert()}</p>
+                <p><b>Número de convidados:</b> #{clientBean.getGuests()}</p>
+                <p><b>Número de garçons:</b> #{clientBean.getWaiters()}</p>
+
+                <h3>Valores da proposta</h3>
+                <p><b>Valor total por convidado:</b> #{clientBean.getPriceGuest()}</p>
+                <p><b>Valor total convidados:</b> #{clientBean.getPriceGuests()}</p>
+                <p><b>Valor total por garçom:</b> #{clientBean.getPriceWaiters()}</p>
+                <p><b>Valor total da proposta:</b> #{clientBean.getPriceTotal()}</p>
+            </section>
+        </div>
+
+        <a href="inicio.xhtml">
+            <button>Início</button>
+        </a>
+    </div>
+
 </h:body>
 
 </html>
