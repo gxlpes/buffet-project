@@ -5,18 +5,23 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
-    <link rel="stylesheet" href="resources/consulta.css"/>
+    <link rel="stylesheet" href="../resources/css/buscar.css"/>
+    <link rel="stylesheet" href="../resources/css/global.css"/>
     <title>Resultado</title>
 </head>
 <ui:composition template="/WEB-INF/template/content.xhtml">
     <ui:define name="content">
-        <form method="GET" action="save">
+        <section class="buscar">
+            <div class="container-form">
+                <form method="GET" action="../value">
+                    <label for="id">CPF cliente </label>
+                    <input type="text" name="id" id="id" required=""/>
+                    <button type="submit">Consultar</button>
+                </form>
+            </div>
 
-            <label for="id">CPF cliente </label>
-            <input type="text" name="id" id="id" required=""/>
+        </section>
 
-            <button type="submit">Consultar</button>
-        </form>
     </ui:define>
 </ui:composition>
 </HTML>

@@ -1,0 +1,35 @@
+
+.table {
+  margin-top: 50px;
+  margin-inline: auto;
+}
+
+table {
+  border-spacing: 10px;
+  margin-inline: auto;
+  margin-block: 5px;
+  border-radius: 5px;
+  box-shadow: var(--fs-drops);
+  padding: 20px;
+
+  td, {
+    padding: 10px;
+  }
+
+  thead {
+    background: #4B2B21;
+    color: white;
+    padding: 5px;
+
+    th {
+      padding: 5px;
+    }
+  }
+
+  tbody {
+    tr {
+      text-align: center;
+    }
+
+  }
+}

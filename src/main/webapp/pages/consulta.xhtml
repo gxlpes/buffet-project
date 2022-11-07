@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
     <link rel="stylesheet" href="../resources/css/consulta.css"/>
@@ -14,42 +15,45 @@
             <ui:fragment rendered="${clientBean.totalClients() == 0}">
                 <h3>Nenhum cliente cadastrado</h3>
             </ui:fragment>
-            <ui:fragment rendered="${clientBean.totalClients() > 0}">
-                <h:dataTable id="tabelaClients" value="#{clientBean.listClients}" var="client">
-                    <h:column>
-                        <p>CPF</p>
-                        <h:outputText value="#{client.id}"/>
-                    </h:column>
-                    <h:column>
-                        <p>Nome</p>
-                        <h:outputText value="#{client.client}"/>
-                    </h:column>
-                    <h:column>
-                        <p>Convidados</p>
-                        <h:outputText value="#{client.guests}"/>
-                    </h:column>
-                    <h:column>
-                        <p>Garçons</p>
-                        <h:outputText value="#{client.waiters}"/>
-                    </h:column>
-                    <h:column>
-                        <p>Preço convidado</p>
-                        <h:outputText value="#{client.priceGuest}"/>
-                    </h:column>
-                    <h:column>
-                        <p>Preço total convidados</p>
-                        <h:outputText value="#{client.priceGuests}"/>
-                    </h:column>
-                    <h:column>
-                        <p>Preço garçom</p>
-                        <h:outputText value="#{client.priceWaiters}"/>
-                    </h:column>
-                    <h:column>
-                        <p>Preço total</p>
-                        <h:outputText value="#{client.priceTotal}"/>
-                    </h:column>
-                </h:dataTable>
-            </ui:fragment>
+            <section class="table">
+                <ui:fragment rendered="${clientBean.totalClients() > 0}">
+                    <h:dataTable id="tabelaClients" value="#{clientBean.listClients}" var="client">
+                        <h:column>
+                            <f:facet name="header">CPF</f:facet>
+                            <h:outputText value="#{client.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nome</f:facet>
+                            <h:outputText value="#{client.client}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nº Convidados</f:facet>
+                            <h:outputText value="#{client.guests}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nº Garçons</f:facet>
+                            <h:outputText value="#{client.waiters}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Preço Convidado</f:facet>
+                            <h:outputText value="#{client.priceGuest}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Preço Convidados</f:facet>
+                            <h:outputText value="#{client.priceGuests}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Preço Garçons</f:facet>
+                            <h:outputText value="#{client.priceWaiters}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Preço total</f:facet>
+                            <h:outputText value="#{client.priceTotal}"/>
+                        </h:column>
+                    </h:dataTable>
+                </ui:fragment>
+            </section>
+
         </h:body>
     </ui:define>
 </ui:composition>
