@@ -27,7 +27,7 @@ public class SaveServlet extends HttpServlet {
             clientTest = ClientRepository.getClient(id);
             ClientBean.getData(clientTest);
         } catch (Exception e) {
-           throw new ServletException("deu pau", e);
+           throw new ServletException("Error page", e);
         } finally {
             response.sendRedirect("../pages/resultado.xhtml");
         }
@@ -40,7 +40,7 @@ public class SaveServlet extends HttpServlet {
         String client = request.getParameter("client");
         int guests = Integer.parseInt(request.getParameter("guests"));
         String desert = request.getParameter("desert");
-        if (desert == (null)) desert = "n";
+        if (desert == (null)) desert = "Não";
 
         double priceGuest = priceGuest(guests, desert);
         double priceGuests = priceGuests(guests, priceGuest);
@@ -61,7 +61,6 @@ public class SaveServlet extends HttpServlet {
 
         ClientRepository.setup();
         clientRepository.salvar(clientData);
-
         ClientBean.getData(clientData);
 
         response.sendRedirect("../pages/resultado.xhtml");

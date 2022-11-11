@@ -82,9 +82,7 @@ public class ClientRepository {
     public static Client getClient(String id) {
         setup();
         Transaction transaction = null;
-
         Session session = sessionFactory.openSession();
-        // start a transaction
         transaction = session.beginTransaction();
 
         Query query = session.createQuery(" from Client where id_client=:id", Client.class);
@@ -92,13 +90,23 @@ public class ClientRepository {
 
         Client client = (Client) query.getSingleResult();
 
-        // commit transaction
         transaction.commit();
         session.close();
 
         return client;
+    }
+
+    public static String deletar(String id) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        Client client = session.find(Client.class, id);
+        session.delete(client);
+        session.getTransaction().commit();
+        session.close();
+        return "/pages/consulta.xhtml?faces-redirect=true";
 
     }
+
 }
 
 

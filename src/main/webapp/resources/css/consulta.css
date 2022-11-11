@@ -25,5 +25,12 @@ table thead th {
 table tbody tr {
   text-align: center;
 }
+table form {
+  width: 150px;
+}
+table button {
+  width: 150px;
+  height: 35px;
+}
 
 /*# sourceMappingURL=consulta.css.map */

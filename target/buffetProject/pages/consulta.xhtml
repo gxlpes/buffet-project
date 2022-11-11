@@ -54,6 +54,14 @@
                             <f:facet name="header">Preço total</f:facet>
                             <h:outputText value="#{client.priceTotal}"/>
                         </h:column>
+                        <h:column>
+                            <f:facet name="header">Excluir</f:facet>
+                            <h:form>
+                                <h:commandLink action="#{clientBean.deleteClient(client.id)}" >
+                                    <button>Delete</button>
+                                </h:commandLink>
+                            </h:form>
+                        </h:column>
                     </h:dataTable>
                 </ui:fragment>
             </section>

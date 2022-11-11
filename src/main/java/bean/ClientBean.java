@@ -12,6 +12,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import java.util.List;
 
+import static java.lang.Math.round;
+
 @ManagedBean(name = "clientBean")
 @RequestScoped
 @Data
@@ -43,7 +45,6 @@ public class ClientBean {
     }
 
     public String getDesert() {
-
          if(clientBean.getDesert().equals("n")) {
              return "Não";
          } else {
@@ -68,16 +69,21 @@ public class ClientBean {
     }
 
     public double getPriceWaiters() {
-        return clientBean.getPriceWaiters();
+        return round(clientBean.getPriceWaiters());
     }
 
     public double getPriceTotal() {
-        return clientBean.getPriceTotal();
+        return round(clientBean.getPriceTotal());
     }
 
     public int totalClients() {
         return totalClients = listClients.size();
     }
+
+    public String deleteClient(String id) {
+          return ClientRepository.deletar(id);
+    };
+
 
 }
 
