@@ -22,7 +22,7 @@ form {
 form #guests {
   width: 75px;
 }
-form button {
+form .submit {
   width: 100%;
 }
 
